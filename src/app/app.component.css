@@ -1,0 +1,8 @@
+.main-nav > button {
+  margin-right: 5px;
+}
+.main-grid {
+  display:grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  height: calc(100% - 64px);
+}

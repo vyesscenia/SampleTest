@@ -1,0 +1,32 @@
+<div class="main-grid">
+  <div class="greeting">
+    <span>Welcome to the Best Part Sales System</span>
+  </div>
+  <mat-card class="output-box">
+    <span class="txt-invoice">Invoice</span>
+    <div class="output-details">
+      <p *ngIf="output?.name">{{welcomeText}}</p>
+      <p *ngIf="!output?.name">Your order details will display here!</p>
+      <table class="output-table">
+        <tbody>
+          <tr>
+            <td>Subtotal</td>
+            <td>{{output?.subTotal ? (output?.subTotal | currency ) : '-'}}</td>
+          </tr>
+          <tr>
+            <td>Tax (10%)</td>
+            <td>{{output?.taxAmount ? (output?.taxAmount | currency ): '-'}}</td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Invoice Total</td>
+            <td>{{output?.total ? (output?.total | currency ) : '-'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+</div>
