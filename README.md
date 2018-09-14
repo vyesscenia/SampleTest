@@ -30,9 +30,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Computer Solution Problem (250 points)
 
-1. Written component 50pts (~ 25 minutes)
-2. GITFlow component 50pts (~ 10 minutes)
-3. Code component 100pts (~ 115 minutes)
+1. Written component 25pts (~ 25 minutes)
+2. GITFlow component 25pts (~ 10 minutes)
+3. Code component 200pts (~ 115 minutes)
 
 You can use any resources including  your books, notes, and memos for completing this part of
 the test; however, you cannot ask, share, or consult with anyone in the world. You cannot use
@@ -122,19 +122,19 @@ When the delete button is pressed, delete the corresponding item from the list.
 
 ## Points Breakdown
 
-1. Launch flex modal or alert (2pts reduced) showing about text 5pts
-2. convert name passed from the Orders page to <First Name> <Last Name> and display text 5 pts
-3. Calculate sub total, tax amount and total 15pts
-4. perform input validation (use alert - 2pts reduced)
+1. Launch flex modal or alert (2pts reduced) showing about text 10pts
+2. convert name passed from the Orders page to <First Name> <Last Name> and display text 10 pts
+3. Calculate sub total, tax amount and total 30pts
+4. perform input validation (use alert - 4pts reduced)
   ```
   (use alert - 2pts reduced for each of the four validation)
-1. Name input field not specified. 5pts
-2. Name not containing a “, ”. 5pts
-3. Input values within table null values. 5pts
-4. Subtotal, tax amount and invoice total calculation error 5pts
+1. Name input field not specified. 10pts
+2. Name not containing a “, ”. 10pts
+3. Input values within table null values. 10pts
+4. Subtotal, tax amount and invoice total calculation error 10pts
   ```
-5. Clear the orders form 10pts
-6. Add items 'P414', 'T208' and 'B101' to list when corresponding button is clicked 15pts
-7. delete line item (order) when delete button is click 10 pts
-8. read in the orders.json file and populate the list table with the initial orders (3) 15pts
-9. Display calculated results on invoice (see screenshot) 5 pts
+5. Clear the orders form 20pts
+6. Add items 'P414', 'T208' and 'B101' to list when corresponding button is clicked 30pts
+7. delete line item (order) when delete button is click 20 pts
+8. read in the orders.json file and populate the list table with the initial orders (3) 30pts
+9. Display calculated results on invoice (see screenshot) 10 pts
