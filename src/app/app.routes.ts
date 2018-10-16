@@ -2,7 +2,6 @@ import { RouterModule, PreloadAllModules, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { OrdersComponent } from './orders/orders.component';
-import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
   {

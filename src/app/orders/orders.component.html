@@ -1,14 +1,14 @@
 <div class="orders-container">
   <mat-card class="orders-grid">
     <div class="name-input-container">
-      <span class="input-label">Order by:</span>
-      <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="name" placeholder="Last name, First name">
+      <span class="input-label">Order For:</span>
+      <input type="text" class="form-control" placeholder="Last name, First name">
     </div>
     <mat-toolbar class="action-bar" color="accent">
       <div class="align-right">
-        <button mat-raised-button (click)="addItem('1')">Add Hot Dog</button>
-        <button mat-raised-button (click)="addItem('2')">Add Hamberger</button>
-        <button mat-raised-button (click)="addItem('3')">Add Pizza</button>
+        <button mat-raised-button>Add Hot Dog</button>
+        <button mat-raised-button>Add Hamberger</button>
+        <button mat-raised-button>Add Pizza</button>
       </div>
     </mat-toolbar>
     <div class="table-grid">
@@ -27,21 +27,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let order of orders; let i = index">
+          <tr>
             <td><img class="item-image" [src]="order.image" alt="img"></td>
-            <td><input type="text" class="form-control" [(ngModel)]="order.pid" placeholder="PID"></td>
-            <td><input type="text" class="form-control" [(ngModel)]="order.description" placeholder="Description"></td>
-            <td><input type="text" class="form-control" [(ngModel)]="order.price" placeholder="Price"></td>
-            <td><input type="text" class="form-control" [(ngModel)]="order.quantity" placeholder="Quantity"></td>
-            <td><button mat-raised-button color="primary" (click)="removeItem(i)" color="accent"><mat-icon>delete</mat-icon></button></td>
+            <td><input type="text" class="form-control" placeholder="PID"></td>
+            <td><input type="text" class="form-control" placeholder="Description"></td>
+            <td><input type="text" class="form-control" placeholder="Price"></td>
+            <td><input type="text" class="form-control" placeholder="Quantity"></td>
+            <td><button mat-raised-button color="primary" color="accent"><mat-icon>delete</mat-icon></button></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="action-container">
-      <button mat-raised-button color="primary" (click)="display()">Load Saved Items</button>
-      <button mat-raised-button color="primary" (click)="clear()">Clear</button>
-      <button mat-raised-button color="primary" (click)="calculateTotal(orders)">Submit</button>
+      <button mat-raised-button color="primary">Load Saved Items</button>
+      <button mat-raised-button color="primary">Clear</button>
+      <button mat-raised-button color="primary">Submit</button>
     </div>
   </mat-card>
 </div>
