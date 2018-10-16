@@ -32,7 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. Written component 25pts (~ 25 minutes)
 2. GITFlow component 25pts (~ 10 minutes)
-3. Code component 200pts (~ 115 minutes)
+3. Code component 50pts (~ 115 minutes)
 
 You can use any resources including  your books, notes, and memos for completing this part of
 the test; however, you cannot ask, share, or consult with anyone in the world. You cannot use
@@ -52,8 +52,8 @@ You are hired to create a Web application to computerize Best Part sales process
 
 #### PID Description Price Inventory
 2. 1 Hot Dog 5.00 2
-3. 2 3/8 T Joint 6.00 1
-4. 3 Brake Disk A 12.00 2
+3. 2 Hamberger 6.00 1
+4. 3 Pizza 12.00 2
 
 The data above is located in ```assets/orders.json``` for reference. 
 
@@ -118,19 +118,19 @@ When the delete button is pressed, delete the corresponding item from the list.
 
 ## Points Breakdown
 
-1. Launch flex modal or alert (2pts reduced) showing about text 10pts
-2. convert name from <Last Name>, <First Name> to <First Name> <Last Name> and display text 10 pts
-3. Calculate sub total, tax amount and total 30pts
-4. perform input validation (use alert - 4pts reduced)
+1. Launch flex modal or alert (.5pts reduced) showing about text 2.5pts
+2. convert name from <Last Name>, <First Name> to <First Name> <Last Name> and display text 2.5 pts
+3. Calculate sub total, tax amount and total 7.5pts
+4. perform input validation (use alert - 1pts reduced)
   ```
-  (use alert - 2pts reduced for each of the four validation)
-1. Name input field not specified. 10pts
-2. Name not containing a “, ”. 10pts
-3. Input values within table null values. 10pts
-4. Subtotal, tax amount and invoice total calculation error 10pts
+  (use alert - 1pts reduced for each of the four validation)
+1. Name input field not specified. 2.5pts
+2. Name not containing a “, ”. 2.5pts
+3. Input values within table null values. 2.5pts
+4. Subtotal, tax amount and invoice total calculation error 2.5pts
   ```
-5. Clear the orders form 20pts
-6. Add items 'Hot Dog', 'Hamberger' and 'Pizza' to list when corresponding button is clicked 30pts
-7. delete line item (order) when delete button is click 20 pts
-8. read in the orders.json file and populate the list table with the initial orders (3) 30pts
-9. Display calculated results on invoice (see screenshot) 10 pts
+5. Clear the orders form 2.5pts
+6. Add items 'Hot Dog', 'Hamberger' and 'Pizza' to list when corresponding button is clicked 7.5pts
+7. delete line item (order) when delete button is click 7.5 pts
+8. read in the orders.json file and populate the list table with the initial orders (3) 7.5pts
+9. Display calculated results on a flex-modal (see screenshot) 2.5 pts
