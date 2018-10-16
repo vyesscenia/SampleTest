@@ -7,14 +7,9 @@ import { MainComponent } from './main/main.component';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'orders',
     pathMatch: 'full',
-    data: { title: 'Main' }
-  },
-  {
-    path: 'main',
-    component: MainComponent,
-    data: { title: 'Main' }
+    data: { title: 'orders' }
   },
   {
     path: 'orders',

@@ -5,9 +5,9 @@ import { Http } from '@angular/http';
 
 export interface IOrder {
   pid?: string;
+  image?: string;
   description?: string;
   price?: number;
-  inventory?: number;
   quantity?: number;
 }
 
@@ -22,6 +22,7 @@ export class OrdersComponent implements OnInit {
   public orders: Array<IOrder> = [];
   private orderCopy: Array<IOrder> = [];
   public errorMessage = '';
+  public confirmMessage = '';
   constructor(
     private router: Router,
     private flexModal: FlexModalService,
@@ -34,21 +35,25 @@ export class OrdersComponent implements OnInit {
     this.orderCopy = <Array<IOrder>>await this.readFile();
   }
 
+  prepareResults(total: number, subTotal: number, taxAmount: number, name: string) {
+    let str = '';
+    let fullStr = name;
+    let commaIndex = fullStr.indexOf(', ');
+    let firstName = fullStr.slice(commaIndex + 1, fullStr.length);
+    let lastName = fullStr.slice(0, commaIndex);
+    str = 'Thank you for your order' + firstName + ' ' + lastName + '.' +
+      ' Your subTotal is: $' + subTotal + '. Your tax amount is: $' + taxAmount + '. Your grand total is: $' + total + '.';
+    return str;
+  }
+
   // Calculate total and perform input validation
   calculateTotal(orders: Array<IOrder>) {
-    const subTotal = orders.reduce((acc: number, item: IOrder, it: number, arr: Array<IOrder>) => {
-      acc += item.price * item.quantity;
-      return acc;
-    }, 0);
+    const subTotal = orders.reduce((acc: number, item: IOrder) => acc += item.price * item.quantity, 0);
     const taxAmount = subTotal * .10;
     const total = subTotal + taxAmount;
     if (this.name && subTotal && total && taxAmount && this.name.indexOf(', ') !== -1) {
-      this.router.navigate(['main', {
-        subTotal: subTotal,
-        total: total,
-        taxAmount: taxAmount,
-        name: this.name
-      }]);
+      this.confirmMessage = this.prepareResults(total, subTotal, taxAmount, this.name);
+      this.showModal('confirm-modal');
     } else {
       const nameError = !this.name;
       const calcError = !subTotal || !total || !taxAmount;
@@ -68,12 +73,6 @@ export class OrdersComponent implements OnInit {
       }
       this.showModal('error-modal');
     }
-    return {
-      subTotal: subTotal,
-      total: total,
-      taxAmount: taxAmount,
-      name: this.name
-    };
   }
 
   display() {
@@ -86,9 +85,9 @@ export class OrdersComponent implements OnInit {
     this.orders = this.orders.map((order: IOrder) => {
       const clearedOrder: IOrder = {};
       Object.keys(order).forEach((item) => {
-        clearedOrder[item] = null;
+        item != 'image' ? order[item] = null : false;
       });
-      return clearedOrder;
+      return order;
     });
   }
 
@@ -96,35 +95,17 @@ export class OrdersComponent implements OnInit {
     this.flexModal.openDialog(modalID);
   }
 
-  // Add items 'P414', 'T208' and 'B101' to list when corresponding button is clicked
+  // Add items 'Hot Dog', 'Hamberger' and 'Pizza' to list when corresponding button is clicked
   addItem(pid: string) {
     switch (pid) {
-      case 'P414':
-        this.orders.unshift({
-          pid: 'P414',
-          description: '1/4 Pipe',
-          price: 12.00,
-          inventory: 30,
-          quantity: 1
-        });
+      case '1':
+        this.orders.unshift({ pid: '1', image: 'assets/sm_hotdog.jpeg', description: 'Hot Dog', price: 5.00, quantity: 1 });
         break;
-      case 'T208':
-        this.orders.unshift({
-          pid: 'T208',
-          description: '3/8 T Joint',
-          price: 64.00,
-          inventory: 74,
-          quantity: 1
-        });
+      case '2':
+        this.orders.unshift({ pid: '2', image: 'assets/sm_hamberger.jpeg', description: 'Hamberger', price: 6.00, quantity: 1 });
         break;
-      case 'B101':
-        this.orders.unshift({
-          pid: 'B101',
-          description: 'Break Disk A',
-          price: 85.00,
-          inventory: 98,
-          quantity: 1
-        });
+      case '3':
+        this.orders.unshift({ pid: '3', image: 'assets/sm_pizza.jpeg', description: 'Large Pizza', price: 12.00, quantity: 1 });
         break;
     }
   }

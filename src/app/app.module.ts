@@ -11,13 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routes';
 import { OrdersComponent } from './orders/orders.component';
-import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrdersComponent,
-    MainComponent
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
