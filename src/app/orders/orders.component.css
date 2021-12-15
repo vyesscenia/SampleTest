@@ -26,12 +26,12 @@
   justify-self: center;
 }
 
-.action-bar>.align-right {
+.action-bar > .align-right {
   position: absolute;
   right: 20px;
 }
 
-.align-right>button {
+.align-right > button {
   margin-right: 10px;
 }
 
@@ -68,5 +68,5 @@
 }
 .item-image {
   width: 150px;
-  background-size:cover;
+  background-size: cover;
 }
